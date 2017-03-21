@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<script src="lib/angular/angular.js"></script>
+<body ng-app="myApp">
+
+<first-directive></first-directive>
+
+<script>
+var app = angular.module("myApp", []);
+app.directive("firstDirective", function($compile) {
+    return {
+       templateUrl : '<h1>This is first directive!</h1> <br / ><br / ><button type="button" ng-click="firstCtrl()">Click Me to second directive!</button> <div id="insertSecond"></div> ',
+        controller: function ($scope) {
+              $scope.firstCtrl = function() {
+                    var ele = $compile('<second-directive></second-directive>')($scope);
+                    angular.element(document.querySelector('#insertSecond')).append(ele);
+              }
+        }
+    }
+});
+
+app.directive("firstDirective", function() {
+    return {
+       templateUrl : '<h1>This is second directive!</h1> <br / ><br / >',
+        controller: function ($scope) {
+
+        }
+    }
+});

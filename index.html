@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+  <meta charset="utf-8" />
+  <script  src="angular.min.js" ></script>
+  <script  src="control.js"></script>
+  <script  src="hotkeys.js"></script>
+
+<link rel="stylesheet" href="hotkeys.css" />
+</head>
+
+<body ng-app="noteApp" ng-controller="testControl">
+
+  <form>
+    First name:<br>
+    <input type="text"  name="firstname" ng-model="firstname" value="Mickey"  id="firstname">
+    <br>
+    Last name:<br>
+    <input type="text" name="lastname" ng-model="lastname" value="Mouse" id="lastname">
+    <br><br>
+      CLASS:<br>
+    <input type="text" name="class" ng-model="class" value="class" id="class">
+    <br><br>
+      AGE:<br>
+    <input type="text"  name="age" ng-model="age" value="age" id="age">
+    <br><br>
+        <button type="button"   name="button"  notepad1="dummy">click me</button>
+  </form>
+
+
+
+</body>
+
+</html>

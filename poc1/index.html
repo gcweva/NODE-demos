@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html ng-app="noteApp">
+
+<head>
+  <meta charset="utf-8" />
+  <title>AngularJS Plunker</title>
+  
+  <link rel="stylesheet" href="../libs/css/ui-grid.min.css" />
+  <link rel="stylesheet" href="../libs/css/hotkeys.css" />
+  <link rel="stylesheet" type="text/css" href="../libs/css/bootstrap-switch.min.css" />
+    <link rel="stylesheet" type="text/css" href="../libs/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../libs/css/font-awesome.min.css" />
+	<link rel="stylesheet" type="text/css" href="../libs/css/fonts/glypicons/glyphicons-halflings-regular.woff" />
+    <!-- <link rel="stylesheet" type="text/css" href="../libs/css/ui-grid.min.css" /> -->
+	
+	
+	
+	
+	
+	
+ 
+  <script src="../libs/js/jquery.min.js"></script>
+  <script src="../libs/js/angular.min.js"></script>
+  <script src="../libs/js/angular-animate.min.js"></script>
+  <script src="../libs/js/ui-bootstrap.min.js"></script>
+  <script src="../libs/js/ui-bootstrap-tpls.js"></script>
+  <script src="../libs/js/hotkeys.min.js"></script>
+  <script src="../libs/js/angular-route.min.js"></script>
+  <script src="../libs/js/angular-ui-router.min.js"></script>
+  <script src="../libs/js/bootstrap.min.js"></script>
+  <script src="../libs/js/jquery.sidr.min.js"></script>
+  <script src="../libs/js/ui-grid.min.js"></script>
+  <script src="../libs/js/angular-touch.js"></script>
+  <script src="../libs/js/angular-sanitize.min.js"></script>
+  <script src="../libs/js/angular-localize.min.js"></script>
+  <script src="app.js"></script>
+  
+  
+  
+  
+  
+  
+  
+</head>
+
+<body ng-controller="testControl" shortkey>
+  <h1 class="title">The Note Making App</h1>
+  <div >
+    First name:<br>
+    <input type="text" cap  name="firstname" ng-model="firstname"   id="firstname">
+    <br>
+    Last name:<br>
+    <input type="text"  cap name="lastname" ng-model="lastname"  id="lastname">
+    <br><br>
+      CLASS:<br>
+    <input type="text" cap name="class" ng-model="class"  id="class">
+    <br><br>
+      AGE:<br>
+    <input type="text" cap  name="age" ng-model="age"  id="age">
+    <br><br>
+	
+	
+	 <div class="col-md-6" ng-controller="DatepickerPopupDemoCtrl">
+        <p class="input-group" ng-init="val=false">
+          <input mydatepicker type="text" class="form-control" uib-datepicker-popup="ddMMM" ng-model="dt" 
+          is-open="val" datepicker-options="dateOptions""   />
+          <span class="input-group-btn">
+            <button type="button" class="btn btn-default"  ng-click="val=!val"><i 
+            class="glyphicon glyphicon-calendar"></i></button>
+          </span>
+        </p>{{val}}{{dt}}
+		
+		
+      </div> <br><br> <br><br>
+        <button type="button"  ng-click="value=!value" name="button"  >click me</button>
+  </div>
+  
+  <span  style="
+    padding-left: 1000px;
+    padding-top: -25px;
+    position: relative;
+    top: -300px;
+" ng-if="value" class="pull-right" name="button"  notepad1="dummy">click me</span>
+</body>
+
+</html>

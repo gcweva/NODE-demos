@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html ng-app="noteApp">
+
+<head>
+  <meta charset="utf-8" />
+  <title>AngularJS Plunker</title>
+  
+  <link rel="stylesheet" href="../libs/css/ui-grid.min.css" />
+  <link rel="stylesheet" href="../libs/css/hotkeys.css" />
+  <link rel="stylesheet" type="text/css" href="../libs/css/bootstrap-switch.min.css" />
+    <link rel="stylesheet" type="text/css" href="../libs/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../libs/css/font-awesome.min.css" />
+	<link rel="stylesheet" type="text/css" href="../libs/css/fonts/glypicons/glyphicons-halflings-regular.woff" />
+    <!-- <link rel="stylesheet" type="text/css" href="../libs/css/ui-grid.min.css" /> -->
+	
+	
+	
+	
+	
+	
+ 
+  <script src="../libs/js/jquery.min.js"></script>
+  <script src="../libs/js/angular.min.js"></script>
+  <script src="../libs/js/angular-animate.min.js"></script>
+  <script src="../libs/js/ui-bootstrap.min.js"></script>
+  <script src="../libs/js/ui-bootstrap-tpls.js"></script>
+  <script src="../libs/js/hotkeys.min.js"></script>
+  <script src="../libs/js/angular-route.min.js"></script>
+  <script src="../libs/js/angular-ui-router.min.js"></script>
+  <script src="../libs/js/bootstrap.min.js"></script>
+  <script src="../libs/js/jquery.sidr.min.js"></script>
+  <script src="../libs/js/ui-grid.min.js"></script>
+  <script src="../libs/js/angular-touch.js"></script>
+  <script src="../libs/js/angular-sanitize.min.js"></script>
+  <script src="../libs/js/angular-localize.min.js"></script>
+  <!-- <script src="app.js"></script> -->
+  
+  
+  
+  
+  
+  
+  
+</head>
+<div ng-controller="MyController" >
+    <userinfo >This will be replaced</userinfo>
+	
+	  <userinfo >This will be replaced</userinfo>  
+</div>
+
+<script>
+    myapp = angular.module("noteApp", []);
+    myapp.directive('userinfo', function() {
+        var directive = {};
+
+        directive.restrict = 'E'; /* restrict this directive to elements */
+
+        directive.compile = function(element, attributes) {
+            element.css("border", "3px solid red");
+
+            var linkFunction = function($scope, element, attributes) {
+                element.html("This is the new content: " + $scope.firstName);
+                element.css("background-color", "#ffff00");
+            }
+
+            return linkFunction;
+        }
+
+        return directive;
+    })
+    myapp.controller("MyController", function($scope, $http) {
+        $scope.cssClass = "notificationDiv";
+
+        $scope.firstName = "Jakob";
+
+        $scope.doClick = function() {
+            console.log("doClick() called");
+        }
+    });
+</script>    
+
+</html>

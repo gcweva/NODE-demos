@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html ng-app="plunker">
+
+  <head>
+    <meta charset="utf-8" />
+    <title>AngularJS Plunker</title>
+    <script>document.write('<base href="' + document.location + '" />');</script>
+    <link rel="stylesheet" href="" />
+    <script data-require="angular.js@1.2.x" src="https://code.angularjs.org/1.2.22/angular.js" data-semver="1.2.22"></script>
+    <script>var app = angular.module('plunker', []);
+
+function createDirective(name){  
+  return function(){
+    return {
+      restrict: 'E',
+      compile: function(tElem, tAttrs){
+        console.log(name + ': compile => ' + tElem.html());
+            link: function(scope, elem, attrs) {
+            console.log(name + ': pre link =>');
+          }
+        
+      }
+    }
+  }
+}
+
+app.directive('levelOne', createDirective('levelOne'));
+app.directive('levelTwo', createDirective('levelTwo'));
+app.directive('levelThree', createDirective('levelThree'));
+
+app.controller('as',function($scope){
+ $scope.name="AAAAAAAA"; 
+});</script>
+  </head>
+
+  <body ng-controller="as">
+    <level-one>  
+      <level-two>  
+        <level-three>
+          Hello {{name}}
+        </level-three>
+      </level-two>
+    </level-one>
+  </body>
+
+</html>
